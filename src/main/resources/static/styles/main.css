@@ -1,0 +1,7 @@
+table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    height: 800px;
+  	overflow-y: scroll;
+}
