@@ -26,6 +26,8 @@ public class Cs01ControllerRest {
 
 		List<List<String>> csvContentOnly = convertMultiRowToList(csvContent);
 		
+		
+		
 		List<String> csvHeader = new ArrayList<>();
 		if (isCsvContentHasHeader) {
 			csvHeader = csvContentOnly.get(0);
@@ -38,7 +40,7 @@ public class Cs01ControllerRest {
 
 	@PostMapping("convert")
 	public Map<String, Object> convert(@RequestBody List<List<String>> tableData) {
-		String output = tableData.stream().filter(x -> x != null && !x.isEmpty()).map(x -> String.join(", ", x)).collect(Collectors.joining("\n"));
+		String output = tableData.stream().filter(x -> x != null && !x.isEmpty()).map(x -> String.join(",", x)).collect(Collectors.joining("\n"));
 		return Map.of("csvContent", output);
 	}
 
