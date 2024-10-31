@@ -1,15 +1,16 @@
-package com.andt.ectool.controller.cs;
+package com.andt.ectool.controller.test;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("cs01")
-public class Cs01Controller {
+@RequestMapping("test")
+public class TestController {
 
 	@GetMapping
-	public String toTa01Page() {
-		return "cs/cs01";
+	String toTestPage() {
+		return "test";
 	}
+	
 }

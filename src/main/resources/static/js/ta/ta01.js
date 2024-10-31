@@ -1,27 +1,26 @@
 
-$(document).ready(function() {
-	$('#table_a5').hide();
-	
-	$('#convertBtn').on('click', function() {
-		showHide();
 
-		const a5Input = getA5Input();
-		console.log(a5Input);
-		$.ajax({
-			type: 'POST',
-			url: 'ta01/api/convert',
-			data: { a5Input: a5Input },
-			success: function(response) {
-				updateTable(response);
-			},
-			error: function(error) {
-				console.error('Error:', error);
-			}
-		});
+
+function converting() {
+	showHide();
+	
+	const a5Input = getA5Input();
+	console.log(a5Input);
+	$.ajax({
+		type: 'POST',
+		url: 'ta01/api/convert',
+		data: { a5Input: a5Input },
+		success: function(response) {
+			updateTable(response);
+		},
+		error: function(error) {
+			console.error('Error:', error);
+		}
 	});
-});
+}
 
 function showHide() {
+	
 	if(!$('#form_input').is(':visible')) {
 	    $('#form_input').show();
 	} else {

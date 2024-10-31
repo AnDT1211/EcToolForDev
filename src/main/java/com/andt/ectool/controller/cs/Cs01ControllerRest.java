@@ -25,9 +25,7 @@ public class Cs01ControllerRest {
 		String csvContent = request.getParameter("csv_content");
 
 		List<List<String>> csvContentOnly = convertMultiRowToList(csvContent);
-		
-		
-		
+
 		List<String> csvHeader = new ArrayList<>();
 		if (isCsvContentHasHeader) {
 			csvHeader = csvContentOnly.get(0);
